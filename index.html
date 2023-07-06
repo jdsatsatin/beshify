@@ -17,34 +17,42 @@
             
         }
         body {
-            background-color: #D3F8E2;
+            background-color: #7895CB;
         }
         .card {
-            background-color: #E4C1F9;
+            background-color: #A0BFE0;
         }
         #beshy {
-            background-color: #E4C1F9;
+            background-color: #A0BFE0;
             border-color: #000;
             outline: none !important;
             box-shadow: none;
         }
         .btn-jd, .btn-jd:hover, .btn-jd:active, .btn-jd:focus, .btn-jd:visited {
-            background-color: #D3F8E2;
+            background-color: #A0BFE0;
             outline: none !important;
             box-shadow: none;
             color: black;
+            border-color: #000;
         }
     </style>
 </head>
 <body>
     <div class="row d-flex flex-column min-vh-100 justify-content-center align-items-center">
         <div class="col-4">
-            <h1 class="text-center">Beshify</h1><h5 class="text-center mb-2">by jdsatsatin</h5>
+            <h1 class="text-center">Beshify</h1><h5 class="text-center mb-3">by jdsatsatin</h5>
             <div class="card">
                 <div class="card-body">
-                    <h6 class="text-center mb-2">Ba't 🤸 malungkot 🤸 ang 🤸 beshy 🤸 ko</h6>
+                    <h6 class="text-center mb-2">Ba't malungkot ang beshy ko</h6>
                     <textarea class="form-control mb-2" id="beshy" rows="4"></textarea>
-                        <button class="form-control btn-jd" type="submit" onclick="start()">BESHIFY</button>
+                    <div class="row">
+                        <div class="col pe-0">
+                            <button class="form-control btn-jd" onclick="start()">BESHIFY</button>
+                        </div>
+                        <div class="col pw-0">
+                            <button class="form-control btn-jd" onclick="copy()">COPY</button>
+                        </div>
+                    </div>
                     <form>
                 </div>
             </div>
@@ -56,6 +64,12 @@
         var string = ((document.getElementById("beshy").value).split(" ")).join("🤸");
         document.getElementById("beshy").value = string;
     }
+    function copy() {
+        const element = document.getElementById('beshy');
+        element.select();
+        element.setSelectionRange(0, 99999);
+        document.execCommand('copy');
+}
     
 </script>
 </html>
